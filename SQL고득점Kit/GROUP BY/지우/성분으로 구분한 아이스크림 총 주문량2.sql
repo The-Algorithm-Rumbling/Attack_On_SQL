@@ -1,0 +1,6 @@
+# 성분 타입별 총주문량 작은 순대로
+SELECT i.INGREDIENT_TYPE, SUM(h.TOTAL_ORDER) as TOTAL_ORDER
+FROM FIRST_HALF as h
+    JOIN ICECREAM_INFO as i ON h.flavor = i.flavor
+GROUP BY 1
+ORDER BY 2 
